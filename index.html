@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A$AP KEVIN TATTOO</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --panel-bg: #141414;
+            --accent: #d4af37;
+            --text-color: #e0e0e0;
+            --text-muted: #888888;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            border-bottom: 2px solid var(--accent);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px 20px;
+            background: linear-gradient(180deg, #050505 0%, #0d0d0d 100%);
+            border-bottom: 1px dashed #333;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-family: var(--font-main);
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Sección Home Service */
+        .service-info {
+            background-color: var(--panel-bg);
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .service-info p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background-color: #1a1a1a;
+            border-left: 3px solid var(--accent);
+            padding: 25px;
+            text-align: left;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--panel-bg);
+            border: 1px solid #222;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Contacto */
+        .contact-box {
+            background-color: var(--panel-bg);
+            border: 1px dashed var(--accent);
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-box p {
+            margin-bottom: 40px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #050505;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            header { flex-direction: column; gap: 10px; padding: 15px 2px; }
+            nav a { margin: 0 10px; font-size: 0.8rem; }
+            section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">A$AP KEVIN</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicio">Home Service</a>
+            <a href="#galeria">Trabajos</a>
+            <a href="#contacto">Citas</a>
+        </nav>
+    </header>
+
+    <div id="inicio" class="hero">
+        <h1>A$AP KEVIN TATTOO</h1>
+        <p>Diseños personalizados, sombras profundas y arte oriental con trazos profesionales firmes directos a tu ubicación.</p>
+        <a href="#contacto" class="btn">Cotizar Trabajo</a>
+    </div>
+
+    <section id="servicio">
+        <h2>Home Service Premium</h2>
+        <div class="service-info">
+            <p>¿Sin tiempo para salir o prefieres la total privacidad de tu espacio? Llevo la experiencia completa y el nivel de un estudio profesional directo a la comodidad de tu casa.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🛡️ Bioseguridad Al 100%</h3>
+                    <p>Materiales descartables, cartuchos y agujas nuevas que abro exclusivamente frente a tus ojos antes de empezar.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💼 Equipo Profesional</h3>
+                    <p>Cargo con mi propia camilla portátil ligera, iluminación LED especializada y tintas de la más alta calidad.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📋 ¿Cómo funciona?</h3>
+                    <p>Me pasas tu idea con las medidas, confirmamos tu sector, aseguras tu fecha con un abono previo y ¡listo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <h2>Algunos Trabajos</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://i.postimg.cc/s1XxhDfw/IMG-2078.jpg" alt="Tatuaje Lobo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/Jt2ncVtP/IMG-2081.jpg" alt="Tatuaje Mariposa Espalda"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/QVytkGVk/IMG-2082.jpg" alt="Tatuaje Leona y Cachorro"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/jC527dq4/IMG-2083.jpg" alt="Diseño Oriental Rostro"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/mhDkH2ZN/IMG-2084.jpg" alt="Diseño Oriental Peces Koi"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/mh5DNfh9/IMG-2094.png" alt="Tatuaje Pez y Flores"></div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>¿Listo para plasmar tu idea?</h2>
+        <div class="contact-box">
+            <p>Escríbeme para platicar sobre tu diseño, tamaño, zona del cuerpo, ubicación y darte un presupuesto para tu sesión a domicilio.</p>
+            <a href="https://wa.me/50767584721?text=Hola%20A$AP%20KEVIN,%20quiero%20cotizar%20un%20tatuaje%20a%20domicilio" class="btn" target="_blank">Enviar Mensaje Directo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/asap_kevinlevin" target="_blank">📸 Instagram</a>
+            <a href="https://facebook.com/TU_PAGINA_DE_TATUAJES" target="_blank">🔵 Facebook</a>
+            <a href="https://tiktok.com/@TU_TIKTOK_DE_TATUAJES" target="_blank">🎵 TikTok</a>
+        </div>
+        <p>&copy; 2026 A$AP KEVIN TATTOO. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
